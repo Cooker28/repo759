@@ -20,7 +20,7 @@ __global__ void vscale(const float *a, float *b, unsigned int n) {
 int main(int argc, char* argv[]) {
 	
 	// Number of elements in each array is only input
-	unsigned int n = std::atoi(argv[1]);
+	int n = std::atoi(argv[1]);
 
 	// Generate random numbers for a and b
 	std::random_device seed;
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
 	// Populate arrays
 	float* a = new float[n];
 	float* b = new float[n];
-	float* da, db;
+	float* da, *db;
 	
 	for (int i = 0; i < n; i++) {
 		a[i] = distA(gen);
